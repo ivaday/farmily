@@ -9,7 +9,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="relative sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
           <Leaf className="h-6 w-6 text-green-600" />
@@ -39,17 +39,17 @@ export default function Header() {
         </nav>
 
         <nav className="flex gap-4">
-        <Link href="/login">
-          <Button variant="outline" className="text-green-700 border-green-700 hover:bg-green-50">
-            Log In
-          </Button>
-        </Link>
-        <Link href="/join">
-          <Button className="bg-green-600 hover:bg-green-700 text-white">
-            Join Now
-          </Button>
-        </Link>
-       </nav>
+          <Link href="/login">
+            <Button variant="outline" className="text-green-700 border-green-700 hover:bg-green-50">
+              Log In
+            </Button>
+          </Link>
+          <Link href="/join">
+            <Button className="bg-green-600 hover:bg-green-700 text-white">
+              Join Now
+            </Button>
+          </Link>
+        </nav>
 
         {/* Mobile Menu Button */}
         <button
@@ -63,7 +63,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-full right-0 bg-white z-50 w-[200px] p-4 shadow-md rounded-md">
+        <div className="fixed top-16 right-4 bg-white z-50 w-[200px] p-4 shadow-md rounded-md">
           <nav className="flex flex-col gap-4">
             <Link
               href="/"
@@ -111,7 +111,9 @@ export default function Header() {
               <Button variant="outline" className="w-full border-green-600 text-green-600">
                 Log In
               </Button>
-              <Button className="w-full bg-green-600 hover:bg-green-700">Join Now</Button>
+              <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                Join Now
+              </Button>
             </div>
           </nav>
         </div>
