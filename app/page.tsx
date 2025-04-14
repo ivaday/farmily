@@ -20,21 +20,27 @@ export default function Home() {
                 agricultural produce.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                <a href="/join">
-                  <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
-                    Join Now <ArrowRight className="ml-2 h-4 w-4" />
+                <a href="/join" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="w-full bg-green-600 hover:bg-green-700 text-white"
+                  >
+                    Join Now
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </a>
-                <a href="/about">
+
+                <a href="/about" className="w-full sm:w-auto">
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-green-600 text-green-600 hover:bg-green-50"
+                    className="w-full border-green-600 text-green-600 hover:bg-green-50"
                   >
                     Learn More
                   </Button>
                 </a>
               </div>
+
             </div>
             {/* Right Column - Image */}
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl">
