@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Leaf, DollarSign, Users, TrendingUp, ShoppingCart, Link } from "lucide-react"
+import { ArrowRight, Leaf, DollarSign, Users, TrendingUp, ShoppingCart, Link, Target } from "lucide-react"
 
 export default function Home() {
   return (
@@ -9,6 +9,8 @@ export default function Home() {
       <section className="relative bg-gradient-to-b from-green-50 to-white py-20 md:py-32">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+            {/* Left Column - Text + Buttons */}
             <div className="space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-green-800">
                 Empowering Farmers, Enriching Communities
@@ -17,13 +19,13 @@ export default function Home() {
                 We connect farmers directly to consumers, eliminating middlemen and ensuring fair prices for
                 agricultural produce.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/join-now">
-                  <Button size="lg" className="bg-green-600 hover:bg-green-700">
+              <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                <a href="/join">
+                  <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
                     Join Now <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </Link>
-                <Link href="/about">
+                </a>
+                <a href="/about">
                   <Button
                     size="lg"
                     variant="outline"
@@ -31,9 +33,10 @@ export default function Home() {
                   >
                     Learn More
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
+            {/* Right Column - Image */}
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/hero.jpg"
@@ -43,12 +46,11 @@ export default function Home() {
                 priority
               />
             </div>
+
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
       </section>
-
-
 
       {/* Problem Section */}
       <section className="py-20 bg-green-800 text-white">
