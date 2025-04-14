@@ -63,7 +63,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 bg-white z-40 p-4">
+        <div className="absolute top-full right-0 bg-white z-50 w-[200px] p-4 shadow-md rounded-md">
           <nav className="flex flex-col gap-4">
             <Link
               href="/"
