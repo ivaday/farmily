@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Leaf, DollarSign, Users, TrendingUp, ShoppingCart } from "lucide-react"
+import { ArrowRight, Leaf, DollarSign, Users, TrendingUp, ShoppingCart, Link } from "lucide-react"
 
 export default function Home() {
   return (
@@ -18,12 +18,20 @@ export default function Home() {
                 agricultural produce.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700">
-                  Join Now <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
-                  Learn More
-                </Button>
+                <Link href="/join-now">
+                  <Button size="lg" className="bg-green-600 hover:bg-green-700">
+                    Join Now <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/about">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-green-600 text-green-600 hover:bg-green-50"
+                  >
+                    Learn More
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl">
@@ -40,7 +48,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
-      
+
 
       {/* Problem Section */}
       <section className="py-20 bg-green-800 text-white">
@@ -106,7 +114,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold text-green-800 mb-2">Direct Marketplace</h3>
                   <p className="text-gray-600">
-                  Farmily is a simple, multilingual web & mobile platform that empowers farmers to sell their produce directly to local buyers, removing middlemen and restoring control over pricing and distribution.
+                    Farmily is a simple, multilingual web & mobile platform that empowers farmers to sell their produce directly to local buyers, removing middlemen and restoring control over pricing and distribution.
                   </p>
                 </div>
               </div>
@@ -117,7 +125,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold text-green-800 mb-2">Sustainable Practices</h3>
                   <p className="text-gray-600">
-                  Unlike generic e-commerce platforms, Farmily is focused only on local produce within a few kilometers — making it fast, sustainable, and community-driven.
+                    Unlike generic e-commerce platforms, Farmily is focused only on local produce within a few kilometers — making it fast, sustainable, and community-driven.
                   </p>
                 </div>
               </div>
@@ -128,8 +136,8 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold text-green-800 mb-2">Community Building</h3>
                   <p className="text-gray-600">
-                  Most small farmers don’t earn enough to recover their investment.
-                  They grow food for the nation, but can’t feed their own families.
+                    Most small farmers don’t earn enough to recover their investment.
+                    They grow food for the nation, but can’t feed their own families.
                   </p>
                 </div>
               </div>
@@ -261,9 +269,9 @@ export default function Home() {
               Join as a Farmer
             </Button>
             <Button
-            size="lg"
-            variant="outline"
-            className="border-white text-white bg-green-600 hover:bg-green-700"
+              size="lg"
+              variant="outline"
+              className="border-white text-white bg-green-600 hover:bg-green-700"
             >
               Shop as a Consumer
             </Button>
