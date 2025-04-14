@@ -20,8 +20,6 @@ export default function LoginPage() {
     const data = await res.json()
     if (res.ok) {
       alert("Login Successful!")
-      localStorage.setItem("user", JSON.stringify(data.user))
-      window.dispatchEvent(new Event("user-login"))
       window.location.href = "/marketplace"
     }
   }
