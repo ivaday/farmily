@@ -4,27 +4,52 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { UserPlus } from "lucide-react"
+import { useToast } from "@/components/ui/use-toast"
 
 export default function JoinPage() {
+  const { toast } = useToast()
   const [role, setRole] = useState("customer")
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
   async function handleRegister(e: React.FormEvent) {
-    e.preventDefault()
-    const res = await fetch("/api/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, password, role })
-    })
-    const data = await res.json()
-    if (res.ok) {
-      alert("Account Created!")
-      window.location.href = "/login"
+    e.preventDefault();
+    console.log("Submitting registration...");
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, role })
+      });
+      const data = await res.json();
+      console.log("API response:", data);
+  
+      if (res.ok) {
+        toast({
+          title: "Success 🎉",
+          description: "Account created! Redirecting to login...",
+        });
+        setTimeout(() => {
+          window.location.href = "/login";
+        }, 1500);
+      } else {
+        toast({
+          title: "Something went wrong",
+          description: data?.message || "Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (err) {
+      console.error("Registration error:", err);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred.",
+        variant: "destructive",
+      });
     }
   }
-
+  
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-200 via-emerald-100 to-white px-4">
       <div className="bg-white/90 backdrop-blur-xl shadow-2xl rounded-3xl w-full max-w-lg p-10 space-y-8 border border-green-100">
